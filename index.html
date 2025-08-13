@@ -209,8 +209,9 @@
             <div class="hero-bg-video">
                 <!-- Selfhosted Video Start -->
                 <!-- <video autoplay muted loop id="myVideo"><source src="images/hero-bg-video.mp4" type="video/mp4"></video> -->
-                <video autoplay muted loop id="myVideo" aria-label="Vídeo de fundo mostrando sessão de massagem">
+                <video autoplay muted loop playsinline preload="metadata" id="myVideo" aria-label="Vídeo de fundo mostrando sessão de massagem" poster="images/hero-bg.jpg">
                     <source src="images/video-massagem.mp4" type="video/mp4">
+                    <source src="images/video-massagem.webm" type="video/webm">
                     <p>Seu navegador não suporta reprodução de vídeo. Experimente nossa massoterapia em Várzea Paulista!</p>
                 </video>
 
@@ -789,5 +790,44 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+    
+    <!-- Mobile Video Fix -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('myVideo');
+        const heroSection = document.querySelector('.hero-bg-video');
+        
+        if (video) {
+            // Tentar reproduzir o vídeo
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    // Vídeo reproduzindo com sucesso
+                    console.log('Vídeo reproduzindo');
+                }).catch(error => {
+                    // Autoplay falhou - usar imagem de fundo
+                    console.log('Autoplay falhou, usando imagem de fundo');
+                    video.style.display = 'none';
+                    heroSection.style.backgroundImage = 'url(images/hero-bg.jpg)';
+                    heroSection.style.backgroundSize = 'cover';
+                    heroSection.style.backgroundPosition = 'center';
+                    heroSection.style.backgroundRepeat = 'no-repeat';
+                });
+            }
+            
+            // Detectar se é dispositivo móvel e tentar reproduzir quando o usuário interagir
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                document.addEventListener('touchstart', function() {
+                    if (video.paused) {
+                        video.play().catch(e => {
+                            console.log('Não foi possível reproduzir o vídeo em mobile');
+                        });
+                    }
+                }, { once: true });
+            }
+        }
+    });
+    </script>
 </body>
 </html>

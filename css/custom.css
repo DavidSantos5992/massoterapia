@@ -6862,3 +6862,47 @@ header.main-header .header-sticky.active{
 		font-size: 24px;
 	}
 }
+
+/************************************/
+/*** Mobile Video Fix css        ***/
+/************************************/
+
+/* Melhorias para reprodução de vídeo em mobile */
+#myVideo {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.hero-bg-video {
+	position: relative;
+	overflow: hidden;
+}
+
+/* Fallback para dispositivos que não suportam autoplay */
+@media (max-width: 768px) {
+	.hero-bg-video {
+		background-image: url('../images/hero-bg.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		min-height: 100vh;
+	}
+	
+	#myVideo {
+		display: none;
+	}
+	
+	/* Mostrar vídeo apenas se o JavaScript conseguir reproduzi-lo */
+	.video-playing #myVideo {
+		display: block;
+	}
+	
+	.video-playing .hero-bg-video {
+		background-image: none;
+	}
+}
