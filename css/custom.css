@@ -6893,3 +6893,54 @@ header.main-header .header-sticky.active{
 		background-image: none;
 	}
 }
+
+/************************************/
+/*** GPS Address Links css       ***/
+/************************************/
+
+/* Estilo para links de endereço GPS */
+a[href*="google.com/maps"] {
+	color: #f5e2aa !important;
+	text-decoration: underline !important;
+	transition: all 0.3s ease;
+	font-weight: 600;
+}
+
+a[href*="google.com/maps"]:hover {
+	color: #fff !important;
+	text-shadow: 0 0 5px rgba(245, 226, 170, 0.7);
+	transform: translateY(-1px);
+}
+
+/* Ícone GPS nos links */
+a[href*="google.com/maps"]:before {
+	content: "📍 ";
+	margin-right: 3px;
+}
+
+/************************************/
+/*** Instagram Link Styling      ***/
+/************************************/
+
+/* Estilo especial para o link do Instagram */
+.footer-social-links a[href*="instagram.com"] {
+	background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 15px rgba(240, 148, 51, 0.3);
+}
+
+.footer-social-links a[href*="instagram.com"]:hover {
+	transform: translateY(-3px) scale(1.1);
+	box-shadow: 0 8px 25px rgba(240, 148, 51, 0.5);
+}
+
+.footer-social-links a[href*="instagram.com"] i {
+	color: white !important;
+	font-size: 20px;
+}
