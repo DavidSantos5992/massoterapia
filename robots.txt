@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lucilenemassoterapia.com.br/sitemap.xml
+Sitemap: https://www.lucilenemassoterapia.com.br/sitemap.xml
