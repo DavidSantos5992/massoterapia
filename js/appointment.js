@@ -27,7 +27,7 @@
         'Lesão ou treino': ['Massagem terapêutica', 'Liberação miofascial com ventosas', 'Kinesio tape']
     };
     var needs = Object.keys(recommendations);
-    var periods = ['Manhã', 'Tarde', 'Noite'];
+    var periods = ['Manhã', 'Tarde'];
     var weekdays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     var stage = root.querySelector('[data-appointment-stage]');
     var liveRegion = root.querySelector('.appointment-live-region');
@@ -131,6 +131,7 @@
     }
 
     function render() {
+        root.setAttribute('data-current-step', state.step);
         updateProgress();
         if (state.step === 1) renderServices();
         else if (state.step === 2) renderDate();

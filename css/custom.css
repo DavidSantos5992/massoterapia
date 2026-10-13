@@ -7178,8 +7178,12 @@ a[href*="google.com/maps"]:before {
 .appointment-date-layout{
 	display: grid;
 	grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-	gap: 40px;
+	gap: 28px;
 	align-items: start;
+}
+
+.appointment-step[data-step="date"] .appointment-step-header{
+	margin-bottom: 20px;
 }
 
 .appointment-calendar{
@@ -7193,7 +7197,7 @@ a[href*="google.com/maps"]:before {
 	align-items: center;
 	justify-content: space-between;
 	gap: 16px;
-	margin-bottom: 22px;
+	margin-bottom: 12px;
 }
 
 .appointment-calendar-title{
@@ -7251,7 +7255,7 @@ a[href*="google.com/maps"]:before {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	aspect-ratio: 1;
+	min-height: 44px;
 }
 
 .appointment-calendar-day{
@@ -7289,7 +7293,7 @@ a[href*="google.com/maps"]:before {
 .appointment-calendar-note{
 	font-size: 13px;
 	line-height: 1.45;
-	margin: 16px 0 0;
+	margin: 10px 0 0;
 }
 
 .appointment-periods .appointment-options{
@@ -7300,7 +7304,32 @@ a[href*="google.com/maps"]:before {
 	font-size: 14px;
 	line-height: 1.5;
 	color: var(--accent-secondary-color);
-	margin: 20px 0 0;
+	margin: 14px 0 0;
+}
+
+.appointment-step[data-step="date"] .appointment-actions{
+	margin-top: 24px;
+	padding-top: 18px;
+}
+
+@media only screen and (min-width: 992px){
+	.appointment-panel[data-current-step="2"]{
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+
+	.appointment-panel[data-current-step="2"] .appointment-progress{
+		margin-bottom: 20px;
+	}
+
+	.appointment-panel[data-current-step="2"] .appointment-step-header{
+		margin-bottom: 12px;
+	}
+
+	.appointment-panel[data-current-step="2"] .appointment-actions{
+		margin-top: 16px;
+		padding-top: 14px;
+	}
 }
 
 .appointment-field{
