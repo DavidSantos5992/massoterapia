@@ -7,14 +7,6 @@
     // Número oficial no formato internacional, sem espaços ou símbolos.
     var WHATSAPP_NUMBER = '5511974260437';
     var TIME_ZONE = 'America/Sao_Paulo';
-    var needs = [
-        'Dor nas costas ou cervical',
-        'Fibromialgia',
-        'Estresse e insônia',
-        'Ansiedade',
-        'Inchaço / pós-operatório',
-        'Lesão ou treino'
-    ];
     var services = [
         'Massagem relaxante',
         'Pedras quentes',
@@ -26,6 +18,15 @@
         'Cone hindu',
         'Kinesio tape'
     ];
+    var recommendations = {
+        'Dor nas costas ou cervical': ['Massagem terapêutica', 'Liberação miofascial com ventosas'],
+        'Fibromialgia': ['Massagem relaxante'],
+        'Estresse e insônia': ['Massagem relaxante', 'Pedras quentes'],
+        'Ansiedade': ['Massagem relaxante'],
+        'Inchaço / pós-operatório': ['Drenagem linfática'],
+        'Lesão ou treino': ['Massagem terapêutica', 'Liberação miofascial com ventosas', 'Kinesio tape']
+    };
+    var needs = Object.keys(recommendations);
     var periods = ['Manhã', 'Tarde', 'Noite'];
     var weekdays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     var stage = root.querySelector('[data-appointment-stage]');
@@ -39,6 +40,7 @@
             step: 1,
             need: '',
             services: [],
+            suggestedServices: [],
             date: '',
             period: '',
             name: '',
@@ -141,8 +143,9 @@
             '<div class="appointment-step-header"><h3>O que você deseja?</h3><p>Você pode escolher mais de uma técnica. Se quiser, conte também o que está sentindo.</p></div>' +
             '<div class="appointment-subsection"><h4>Onde está a sua tensão?</h4><p class="appointment-helper">Este campo é opcional. Marque uma necessidade para incluí-la na avaliação presencial.</p>' +
             '<div class="appointment-options" aria-label="Necessidade opcional">' + optionButtons(needs, state.need, 'need') + '</div>' +
-            '<p class="appointment-disclaimer">Esta seleção é apenas informativa. A técnica mais adequada depende da avaliação da profissional.</p></div>' +
+            '<p class="appointment-disclaimer">Esta seleção é apenas informativa. A técnica mais adequada depende da avaliação da profissional e, quando aplicável, de liberação médica.</p></div>' +
             '<div class="appointment-subsection"><h4>Escolha uma ou mais técnicas</h4><p class="appointment-helper">Selecione pelo menos uma opção para continuar.</p>' +
+            (state.need ? '<p class="appointment-recommendation"><strong>Sugestões iniciais para sua avaliação:</strong> ' + escapeHtml(recommendations[state.need].join(', ')) + '. Você pode alterar as opções livremente.</p>' : '') +
             '<div class="appointment-options" aria-label="Técnicas disponíveis">' + optionButtons(services, state.services, 'service') + '</div>' +
             (state.serviceError ? '<p class="appointment-error" id="service-error" role="alert">' + state.serviceError + '</p>' : '') + '</div>' +
             '<div class="appointment-actions appointment-actions-end"><button class="appointment-button" type="button" data-action="next-services">Continuar</button></div></div>';
@@ -276,16 +279,36 @@
             if (group === 'service') {
                 var serviceIndex = state.services.indexOf(value);
                 if (serviceIndex === -1) state.services.push(value);
-                else state.services.splice(serviceIndex, 1);
+                else {
+                    state.services.splice(serviceIndex, 1);
+                    var suggestedIndex = state.suggestedServices.indexOf(value);
+                    if (suggestedIndex !== -1) state.suggestedServices.splice(suggestedIndex, 1);
+                }
                 state.serviceError = '';
             } else if (group === 'need') {
+                state.services = state.services.filter(function (service) {
+                    return state.suggestedServices.indexOf(service) === -1;
+                });
+                state.suggestedServices = [];
                 state.need = state.need === value ? '' : value;
+                if (state.need) {
+                    recommendations[state.need].forEach(function (service) {
+                        if (state.services.indexOf(service) === -1) {
+                            state.services.push(service);
+                            state.suggestedServices.push(service);
+                        }
+                    });
+                    state.serviceError = '';
+                }
             } else {
                 state.period = state.period === value ? '' : value;
                 state.dateError = '';
             }
             render();
             focusOption(group, value);
+            if (group === 'need' && state.need) {
+                announce('Sugestões adicionadas: ' + recommendations[state.need].join(', ') + '. Você pode alterar as opções.');
+            }
             return;
         }
 

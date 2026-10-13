@@ -7106,6 +7106,13 @@ a[href*="google.com/maps"]:before {
 	padding: 14px 16px;
 }
 
+.appointment-recommendation{
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--accent-secondary-color);
+	margin: 0 0 18px;
+}
+
 .appointment-error{
 	font-weight: 600;
 	line-height: 1.4;
