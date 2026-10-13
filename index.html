@@ -640,6 +640,33 @@
                 </div>
         </section>
         <!-- Page Service Single End -->
+
+        <!-- Appointment Scheduler Start -->
+        <section class="appointment-scheduler bg-section" id="agendamento" aria-labelledby="appointment-title">
+            <div class="container">
+                <div class="appointment-scheduler-heading section-title">
+                    <h3>agendamento</h3>
+                    <h2 id="appointment-title">Agende sua sessão</h2>
+                    <p>Escolha as técnicas, encontre o melhor dia e envie sua solicitação diretamente pelo WhatsApp.</p>
+                </div>
+
+                <div class="appointment-panel" data-appointment-app>
+                    <ol class="appointment-progress" aria-label="Etapas do agendamento">
+                        <li data-progress-step="1" aria-current="step"><span>1</span> Serviços</li>
+                        <li data-progress-step="2"><span>2</span> Data e período</li>
+                        <li data-progress-step="3"><span>3</span> Nome e resumo</li>
+                    </ol>
+
+                    <div class="appointment-live-region visually-hidden" aria-live="polite" aria-atomic="true"></div>
+                    <div class="appointment-stage" data-appointment-stage></div>
+
+                    <noscript>
+                        <p class="appointment-noscript">Ative o JavaScript para usar o agendamento interativo ou fale com a Lu pelo WhatsApp.</p>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+        <!-- Appointment Scheduler End -->
     </main>
 
     <!-- Our Health Section Start -->
@@ -935,6 +962,8 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+    <!-- Appointment Scheduler js file -->
+    <script src="js/appointment.js"></script>
 
     <!-- Mobile Video Fix -->
     <script>
