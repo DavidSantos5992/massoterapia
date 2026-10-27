@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9eadb">
+  <meta name="description" content="Lucilene Microni, massoterapia. Cuidando de quem sempre cuida. Entre em contato pelo WhatsApp ou acompanhe no Instagram.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.lucilenemassoterapia.com.br/lucilene/">
+  <meta property="og:title" content="Lucilene Microni | Massoterapia">
+  <meta property="og:description" content="Cuidando de quem sempre cuida. Conheça a Lucilene Microni e entre em contato.">
+  <meta property="og:image" content="https://www.lucilenemassoterapia.com.br/images/lucilene-massagem-referencia.jpg">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Lucilene Microni | Massoterapia</title>
+  <link rel="canonical" href="https://www.lucilenemassoterapia.com.br/lucilene/">
+  <link rel="icon" href="../images/favicon.png">
+  <link rel="preload" as="image" href="../images/lucilene-massagem-referencia.jpg">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #f9eadb;
+      --ink: #4b281f;
+      --copper: #a45f46;
+      --leaf: #6c7749;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .page {
+      position: relative;
+      width: min(100%, 1200px);
+      min-height: 100dvh;
+      margin: auto;
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .hero {
+      position: relative;
+      height: clamp(560px, 59vw, 708px);
+      overflow: hidden;
+      background: #dfb697;
+    }
+    .hero-photo,
+    .hero-photo img { width: 100%; height: 100%; }
+    .hero-photo { margin: 0; }
+    .hero-photo img { object-fit: cover; object-position: center; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 43%, #f6e5d42e 58%, #f8ead6bd 78%, #faeddbb8 100%);
+      pointer-events: none;
+    }
+    .brand {
+      position: absolute;
+      top: clamp(36px, 5vw, 70px);
+      right: clamp(20px, 4.5vw, 58px);
+      z-index: 1;
+      width: min(39%, 440px);
+      text-align: center;
+    }
+    .lotus {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--copper);
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      line-height: 1;
+      opacity: .9;
+    }
+    h1 {
+      margin: 0;
+      color: #49251d;
+      font-size: clamp(2.7rem, 5.15vw, 4.8rem);
+      font-weight: 400;
+      letter-spacing: .025em;
+      line-height: .94;
+      text-transform: uppercase;
+    }
+    h1 span { display: block; }
+    .profession {
+      margin: 14px 0 0;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      font-size: clamp(.75rem, 1.45vw, 1.25rem);
+      letter-spacing: .3em;
+      text-transform: uppercase;
+    }
+    .brand-divider,
+    .closing-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--copper);
+    }
+    .brand-divider { margin: 24px 0 18px; }
+    .brand-divider::before,
+    .brand-divider::after,
+    .closing-divider::before,
+    .closing-divider::after {
+      content: "";
+      width: 38%;
+      height: 18px;
+      border-bottom: 2px solid currentColor;
+      border-radius: 50%;
+    }
+    .brand-divider::before,
+    .closing-divider::before { transform: translateY(-5px) rotate(5deg); }
+    .brand-divider::after,
+    .closing-divider::after { transform: translateY(-5px) rotate(-5deg); }
+    .brand-divider i { font-size: 2rem; }
+    .care-line,
+    .breath {
+      font-family: "Snell Roundhand", "Brush Script MT", "Segoe Script", cursive;
+      font-style: italic;
+      font-weight: 400;
+      padding-bottom: 4px;
+    }
+    .care-line {
+      max-width: 11em;
+      margin: 0 auto;
+      font-size: clamp(1.7rem, 3.6vw, 3.2rem);
+      line-height: 1.13;
+    }
+    .hero-wave {
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+      left: 0;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: clamp(58px, 8vw, 96px);
+      pointer-events: none;
+    }
+
+    .actions {
+      position: relative;
+      padding: 54px clamp(24px, 4vw, 54px) 18px;
+    }
+    .card-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .action-card {
+      display: flex;
+      min-width: 0;
+      min-height: 384px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 20px 20px;
+      border: 3px solid #fff5eb;
+      border-radius: 36px;
+      box-shadow: 0 4px 18px #633c3352, inset 0 0 0 2px #ffffff44;
+      color: #fffaf6;
+      text-align: center;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .action-card:hover { transform: translateY(-4px); box-shadow: 0 8px 22px #633c335e, inset 0 0 0 2px #ffffff66; }
+    .action-card:active { transform: translateY(0) scale(.985); }
+    .action-card:focus-visible { outline: 4px solid var(--ink); outline-offset: 5px; }
+    .instagram { background: linear-gradient(145deg, #be465e, #af2378 56%, #8c1d80); }
+    .whatsapp { background: linear-gradient(145deg, #07823d, #007733 60%, #006229); }
+    .google { background: linear-gradient(145deg, #116dbc, #0755a4 65%, #06458e); }
+    .card-icon {
+      display: grid;
+      width: 106px;
+      height: 106px;
+      flex: none;
+      place-items: center;
+      border: 4px solid #fffdf6;
+      border-radius: 50%;
+      font-size: 63px;
+      line-height: 1;
+    }
+    .google .card-icon { background: #fffaf4; border-color: #d9e4ec; }
+    .google .card-icon i {
+      background: conic-gradient(#4285f4 0 28%, #34a853 28% 49%, #fbbc05 49% 65%, #ea4335 65% 82%, #4285f4 82%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .card-copy { width: 100%; }
+    .card-copy h3 {
+      margin: 0;
+      font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+      font-weight: 400;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+    .card-copy strong {
+      display: block;
+      margin-top: 2px;
+      font-size: clamp(1.75rem, 3vw, 2.7rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+    .card-detail {
+      display: block;
+      margin-top: 8px;
+      font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 12px;
+      color: #ffcf47;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+    }
+    .card-button {
+      display: flex;
+      width: 100%;
+      min-height: 58px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      background: #fffaf4;
+      box-shadow: 0 3px 5px #472d312e;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      font-size: clamp(.9rem, 1.7vw, 1.35rem);
+      font-weight: 800;
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+    .instagram .card-button { color: #8d1c58; }
+    .whatsapp .card-button { color: #00622b; }
+    .google .card-button { color: #06458e; }
+    .card-button i { font-size: 1.45em; }
+    .foliage {
+      position: absolute;
+      z-index: 0;
+      display: flex;
+      gap: 0;
+      color: var(--leaf);
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      opacity: .67;
+      pointer-events: none;
+    }
+    .foliage i:nth-child(2) { transform: translate(-9px, 35px) rotate(-22deg); }
+    .foliage i:nth-child(3) { transform: translate(-28px, 67px) rotate(38deg); }
+    .foliage-left { top: -26px; left: -42px; transform: rotate(-32deg); }
+    .foliage-right { top: -28px; right: -32px; transform: scaleX(-1) rotate(-30deg); }
+
+    .closing {
+      position: relative;
+      padding: 10px 48px 60px;
+      text-align: center;
+    }
+    .closing-divider { width: min(100%, 930px); margin: 0 auto 14px; }
+    .closing-divider::before,
+    .closing-divider::after { width: 46%; height: 25px; }
+    .closing-divider i { font-size: 2rem; }
+    .breath {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.65rem);
+      line-height: 1.2;
+    }
+    .closing .foliage-left { top: 10px; left: -12px; }
+    .closing .foliage-right { top: 8px; right: -12px; }
+
+    @media (max-width: 930px) {
+      .hero { height: clamp(500px, 70vw, 650px); }
+      .brand { right: 20px; width: 42%; }
+      h1 { font-size: clamp(2.4rem, 5.4vw, 4rem); }
+      .care-line { font-size: clamp(1.6rem, 3.3vw, 2.6rem); }
+      .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .action-card { min-height: 370px; }
+      .google { grid-column: 1 / -1; width: calc((100% - 18px) / 2); justify-self: center; }
+    }
+    @media (max-width: 650px) {
+      .hero { height: auto; overflow: visible; background: var(--cream); }
+      .hero-photo { height: clamp(250px, 67vw, 340px); overflow: hidden; }
+      .hero-photo img { object-position: 19% center; }
+      .hero::after { display: none; }
+      .brand {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        padding: 22px 22px 72px;
+        background: var(--cream);
+      }
+      .lotus { margin-bottom: 8px; font-size: 3.2rem; }
+      h1 { font-size: clamp(2.55rem, 11vw, 3.7rem); }
+      .profession { font-size: .8rem; }
+      .brand-divider { margin: 16px 0 12px; }
+      .care-line { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .hero-wave { bottom: 0; height: 48px; }
+      .actions { padding: 18px 20px 0; }
+      .card-grid { grid-template-columns: 1fr; gap: 18px; max-width: 390px; margin: auto; }
+      .action-card, .google { grid-column: auto; width: 100%; min-height: 330px; padding: 22px 22px 18px; }
+      .card-icon { width: 92px; height: 92px; font-size: 55px; }
+      .card-copy h3 { font-size: 1.15rem; }
+      .card-copy strong { font-size: clamp(2.15rem, 9vw, 2.8rem); }
+      .card-detail { font-size: clamp(1.5rem, 7vw, 2rem); }
+      .card-button { min-height: 56px; font-size: 1.1rem; }
+      .foliage { font-size: 2.8rem; opacity: .4; }
+      .foliage-left { left: -48px; }
+      .foliage-right { right: -48px; }
+      .closing { padding: 22px 20px 55px; }
+      .closing-divider { margin-bottom: 14px; }
+      .closing .foliage { display: none; }
+      .breath { font-size: clamp(2rem, 9vw, 3rem); }
+    }
+    @media (max-width: 360px) {
+      .card-detail { font-size: 1.45rem; }
+      .card-button { font-size: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .action-card { transition: none; }
+      .action-card:hover,
+      .action-card:active { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <figure class="hero-photo">
+        <img src="../images/lucilene-massagem-referencia.jpg" width="1672" height="941" fetchpriority="high" decoding="async" alt="Mulher relaxando enquanto recebe massagem nos ombros em um ambiente acolhedor">
+      </figure>
+      <div class="brand">
+        <i class="fa-solid fa-spa lotus" aria-hidden="true"></i>
+        <h1 id="page-title"><span>Lucilene</span><span>Microni</span></h1>
+        <p class="profession">Massoterapia</p>
+        <div class="brand-divider" aria-hidden="true"><i class="fa-regular fa-heart"></i></div>
+        <p class="care-line">Cuidando de quem sempre cuida <i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1200 96" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 58 C180 84 285 42 475 45 S835 17 1200 77 L1200 96 L0 96 Z" fill="#f9eadb"/>
+        <path d="M0 55 C180 81 285 39 475 42 S835 14 1200 74" fill="none" stroke="#a45f46" stroke-width="5"/>
+        <path d="M0 62 C180 88 285 46 475 49 S835 21 1200 81" fill="none" stroke="#ecc39b" stroke-width="3"/>
+      </svg>
+    </section>
+
+    <section class="actions" aria-labelledby="actions-title">
+      <h2 class="sr-only" id="actions-title">Contato e avaliação</h2>
+      <div class="foliage foliage-left" aria-hidden="true"><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i></div>
+      <div class="foliage foliage-right" aria-hidden="true"><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i></div>
+      <div class="card-grid">
+        <a class="action-card instagram" href="https://www.instagram.com/lm_masso/" target="_blank" rel="noopener noreferrer" aria-label="Me siga no Instagram: @lm_masso (abre em nova aba)">
+          <span class="card-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
+          <div class="card-copy"><h3>Me siga no <strong>Instagram</strong></h3><span class="card-detail">@lm_masso</span></div>
+          <span class="card-button">CLIQUE AQUI <i class="fa-regular fa-hand-pointer" aria-hidden="true"></i></span>
+        </a>
+        <a class="action-card whatsapp" href="https://wa.me/5511974260437?text=Ol%C3%A1%2C%20Lucilene%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos%20de%20massoterapia." target="_blank" rel="noopener noreferrer" aria-label="Fale comigo pelo WhatsApp: (11) 97426-0437 (abre em nova aba)">
+          <span class="card-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+          <div class="card-copy"><h3>Fale comigo pelo <strong>WhatsApp</strong></h3><span class="card-detail">(11) 97426-0437</span></div>
+          <span class="card-button">CLIQUE AQUI <i class="fa-regular fa-hand-pointer" aria-hidden="true"></i></span>
+        </a>
+        <a class="action-card google" href="https://g.page/r/CfhkTIn5yCvJEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Avalie meu atendimento no Google (abre em nova aba)">
+          <span class="card-icon"><i class="fa-brands fa-google" aria-hidden="true"></i></span>
+          <div class="card-copy"><h3>Avalie meu atendimento no <strong>Google</strong></h3><span class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></div>
+          <span class="card-button">CLIQUE AQUI <i class="fa-regular fa-hand-pointer" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="closing">
+      <div class="foliage foliage-left" aria-hidden="true"><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i></div>
+      <div class="foliage foliage-right" aria-hidden="true"><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i></div>
+      <div class="closing-divider" aria-hidden="true"><i class="fa-regular fa-heart"></i></div>
+      <p class="breath">Inspire... Expire... SUSPIRE!!</p>
+    </footer>
+  </main>
+</body>
+</html>
